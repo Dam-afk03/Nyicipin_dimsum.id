@@ -1,5 +1,17 @@
 import {Siap, Frozen}  from './data/menu'
 import {rupiah} from './lib/format'
+import {buatPesan} from './lib/pesanan'
+import type {itemKeranjang, Pesanan} from './types'
+
+
+const contohKeranjang: itemKeranjang[] = [
+  { kunci: 's|1|3|0', jenis: 'siap', nama: 'Dimsum Goreng Keju', isi: '3 pcs', saus: 'Chili oil', harga: 17000, jumlah: 2 },
+]
+
+const contohPesanan: Pesanan = {
+  modeSiap: 'ambil', hari: 'Besok', jam: '18.00-18.30', modeFrozen: 'antar', nama: 'Adam', hp: '081234567890', alamat: '', catatan: '', id: '',
+}
+console.log(buatPesan(contohKeranjang, contohPesanan))
 
 export default function App() {
   return (
