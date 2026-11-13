@@ -1,0 +1,1 @@
+export const rupiah = (angka: number) => 'Rp ' + angka.toLocaleString('id-ID')
