@@ -3,7 +3,7 @@ export const urlFoto = (nama?: string) => (nama ? import.meta.env.BASE_URL + 'im
 export const NAMA_TOKO = 'Nyicipin_Dimsum.ID'
 
 export const CFG = {
-    wa: (import.meta.env.VITE_WA_NUMBER as string | undefined) ?? '6281234567890',
+    wa: (import.meta.env.VITE_WA_NUMBER as string | undefined) ?? '6282117503964',
     batasPesanan: 16,
     jamMulai: 10,
     jamSelesai: 20,

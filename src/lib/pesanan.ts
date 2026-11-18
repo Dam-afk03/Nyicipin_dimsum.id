@@ -98,6 +98,6 @@ export function buatPesan(k: itemKeranjang[], p: Pesanan, namaFileBukti?: string
 }
 
 export function walink(pesan: string): string {
-  const nomorAdmin = CFG.wa || '6281234567890'
+  const nomorAdmin = CFG.wa || '6282117503964'
   return `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesan)}`
 }
