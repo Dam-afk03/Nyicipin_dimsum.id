@@ -1,4 +1,5 @@
-import type { ModuleNamespace } from "vite/types/hot.js"
+
+// foto: taruh file di folder public/img, lalu tulis namanya saja
 
 export type jenis ='siap' | 'frz'
 export type ukuran = 3 | 6 | 9
@@ -6,6 +7,7 @@ export type ukuran = 3 | 6 | 9
 export interface ProdukSiap{
     id: string
     nama: string
+    foto: string
     lencana: string
     saus: string[]
     harga: Record<ukuran, number>
@@ -13,6 +15,7 @@ export interface ProdukSiap{
 
 export interface ProdukFrozen{
     ukuran: ukuran
+    foto: string
     nama : string
     harga: number
     lencana?: string
@@ -40,4 +43,40 @@ export interface Pesanan{
     alamat: string
     catatan: string
     id: string
+}
+
+export interface LangkahPesan {
+  nomor: number;
+  judul: string;
+  deskripsi: string;
+  ikon?: string; // Opsional: nama ikon atau path gambar
+}
+
+export interface Testimoni {
+  id: string;
+  namaBuyer: string;
+  varianDipesan?: string; // Opsional: misal "Dimsum Mentai (M)"
+  rating: number;         // Skala 1 - 5
+  ulasan: string;
+  foto?: string;          // URL hasil upload atau Data URL (Base64) untuk preview lokal
+  tanggal: string;
+}
+
+export interface InfoKontak {
+  whatsapp: string;
+  instagram: string;
+  alamat: string;
+  jamBuka: string;
+  linkMaps?: string;
+}
+
+// satu baris testimoni dari database
+export interface DataTestimoni {
+  id: number
+  nama: string
+  varian: string
+  rating: number
+  ulasan: string
+  foto_url: string | null
+  dibuat: string
 }

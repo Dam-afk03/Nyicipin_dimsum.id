@@ -1,0 +1,184 @@
+/* gaya dmcum.id mengikuti video: oranye hangat, biru untuk frozen, panel gelap */
+:root {
+  --bs-body-bg: #F8F6F2;
+  --bs-body-color: #1F2937;
+  --bs-body-font-family: 'Plus Jakarta Sans', sans-serif;
+  /* nama variabel lama dipertahankan supaya komponen lain tidak perlu diubah */
+  --merah: #C2610C; /* oranye tua untuk teks dan harga */
+  --hijau: #1C1C1C; /* arang untuk tombol keranjang dan panel gelap */
+  --kuning: #FCD34D;
+  --biru-muda: #EAF4FB;
+  --krem: #FEF6E4;
+}
+
+.judul-serif {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* tombol utama oranye dengan teks gelap */
+.btn-merah {
+  --bs-btn-color: #1F2937;
+  --bs-btn-bg: #F59E0B;
+  --bs-btn-border-color: #F59E0B;
+  --bs-btn-hover-color: #1F2937;
+  --bs-btn-hover-bg: #D97706;
+  --bs-btn-hover-border-color: #D97706;
+  --bs-btn-active-color: #1F2937;
+  --bs-btn-active-bg: #D97706;
+  --bs-btn-active-border-color: #D97706;
+  font-weight: 600;
+}
+
+/* tombol arang */
+.btn-hijau {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--hijau);
+  --bs-btn-border-color: var(--hijau);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #000;
+  --bs-btn-hover-border-color: #000;
+}
+
+/* tab menu */
+.nav-pills .nav-link { background: #fff; color: var(--bs-body-color); }
+.nav-pills .nav-link.active { background: var(--hijau); color: #fff; }
+
+/* logo bulat di navbar */
+.logo-bulat { border-radius: 50%; object-fit: cover; }
+/* nama toko di navbar: kecil di HP supaya muat satu baris dengan keranjang */
+.nama-toko { font-size: 1rem; line-height: 1.1; }
+@media (min-width: 768px) {
+  .nama-toko { font-size: 1.5rem; }
+}
+
+/* tombol keranjang: ringkas di HP, tidak boleh turun baris */
+.tombol-keranjang { padding: .35rem .8rem; font-size: .85rem; white-space: nowrap; flex-shrink: 0; }
+@media (min-width: 768px) {
+  .tombol-keranjang { padding: .5rem 1.1rem; font-size: 1rem; }
+}
+
+/* saat meluncur ke bagian, judulnya tidak tertutup navbar yang menempel */
+section[id] { scroll-margin-top: 4.5rem; }
+
+/* kartu */
+.kartu-menu { box-shadow: 0 6px 20px rgba(31, 41, 55, .06); }
+.kartu-siap-bg { background: var(--krem); }
+.kartu-frozen-bg { background: var(--biru-muda); }
+
+/* area foto produk; sementara berisi emoji */
+.foto-menu {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #FCE7B2, #F59E0B);
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+}
+.foto-frozen { background: linear-gradient(135deg, #CFE8F7, #5AA9D6); }
+
+/* label di pojok foto */
+.lencana-menu {
+  position: absolute;
+  top: .6rem;
+  left: .6rem;
+  background: var(--kuning);
+  color: #1F2937;
+  border-radius: 99px;
+  padding: .15rem .7rem;
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+.harga-menu { color: var(--merah); font-weight: 700; font-size: 1.25rem; }
+
+/* kotak putih tempat gambar QRIS */
+.kotak-qris { background: #fff; border-radius: 1rem; padding: 1rem; text-align: center; color: #1F2937; }
+.kotak-qris img { width: 100%; max-width: 240px; }
+
+/* foto asli memenuhi kotak */
+.foto-isi { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+
+/* kotak template saat foto belum ada */
+.foto-kosong { display: flex; flex-direction: column; align-items: center; gap: .25rem; color: rgba(31, 41, 55, .55); text-align: center; padding: 1rem; }
+.foto-kosong span { font-size: 2rem; }
+.foto-kosong small { font-size: .75rem; word-break: break-all; }
+
+/* foto besar di hero */
+.foto-hero { aspect-ratio: 4 / 3.4; border-radius: 2rem 2rem 2rem 5rem; overflow: hidden; }
+
+/* kartu melayang di atas foto hero */
+.kartu-melayang { font-size: .9rem; line-height: 1.3; }
+
+/* kata yang disorot oranye di judul */
+.sorot { color: #F59E0B; }
+
+/* nomor langkah di bagian Cara Pesan */
+.nomor-langkah { color: var(--merah); font-weight: 700; font-size: .85rem; }
+
+/* bagian dengan latar berbeda */
+.bagian-krem { background: var(--krem); }
+.bagian-gelap { background: var(--hijau); color: #fff; }
+.bagian-gelap a { color: #fff; }
+
+/* bintang rating */
+.bintang { color: #F59E0B; letter-spacing: 2px; }
+.tombol-bintang { background: none; border: 0; font-size: 1.6rem; color: #F59E0B; padding: 0 .1rem; line-height: 1; }
+
+/* foto di kartu testimoni */
+.foto-testimoni { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: .75rem; }
+
+/* menu bawah di HP: menempel di dasar layar seperti aplikasi */
+.menu-bawah {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1030;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  border-top: 1px solid #e5e0d6;
+  padding: .4rem .25rem calc(.4rem + env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, .06);
+}
+.menu-bawah a {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .15rem;
+  padding-top: .3rem;
+  font-size: .68rem;
+  color: #8a8f98;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* menu yang sedang dilihat: oranye dengan garis di atasnya */
+.menu-bawah a.aktif { color: var(--merah); font-weight: 600; }
+.menu-bawah a.aktif::before {
+  content: '';
+  position: absolute;
+  top: -.4rem;
+  left: 25%;
+  right: 25%;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: #F59E0B;
+}
+
+/* beri ruang di dasar halaman supaya isi tidak tertutup menu bawah (HP saja) */
+@media (max-width: 767.98px) {
+  body { padding-bottom: 4.5rem; }
+}
+
+@media (max-width: 767.98px) {
+  .kartu-menu .card-title { font-size: .95rem; }
+  .kartu-menu .card-body { padding: .6rem; }
+  .harga-menu { font-size: 1rem; }
+  .lencana-menu { font-size: .65rem; padding: .1rem .5rem; }
+}
